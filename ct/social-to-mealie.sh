@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
-source <(curl -s https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
-# App Default Settings
+_CS_DEFAULT_URL="https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main"
+_cs_boot="${COMMUNITY_SCRIPTS_CORE_DIR:-$(dirname "${BASH_SOURCE[0]}")/../../core}/core/build.func"
+source "$_cs_boot" 2>/dev/null || source <(curl -fsSL "${COMMUNITY_SCRIPTS_CORE_URL:-https://raw.githubusercontent.com/community-scripts/core/main}/core/build.func")
+
 APP="Social Media to Mealie"
 var_tags="recipe;media;ai"
 var_cpu="2"
@@ -10,11 +12,12 @@ var_os="debian"
 var_version="12"
 var_unprivileged="1"
 
-# Header Information
 header_info "$APP"
+variables
+color
+catch_errors
 
-# Proxmox Builder Functions
-base_settings
+start
 build_container
 description
 
