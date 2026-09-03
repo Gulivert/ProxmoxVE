@@ -12,8 +12,20 @@ var_os="debian"
 var_version="12"
 var_unprivileged="1"
 
-header_info "$APP"
-variables
+function header_info {
+clear
+cat <<"EOF"
+   _____            _       _     _____           __  __            _ _      
+  / ____|          (_)     | |   |  __ \         |  \/  |          | (_)     
+ | (___   ___   ___ _  __ _| |   | |__) |__   ___| \  / | ___  __ _| |_  ___ 
+  \___ \ / _ \ / __| |/ _` | |   |  ___/ _ \ / __| |\/| |/ _ \/ _` | | |/ _ \
+  ____) | (_) | (__| | (_| | |   | |  | (_) | (__| |  | |  __/ (_| | | |  __/
+ |_____/ \___/ \___|_|\__,_|_|   |_|   \___/ \___|_|  |_|\___|\__,_|_|_|\___|
+EOF
+}
+header_info
+echo -e "\n"
+var_install="social-to-mealie-install"
 color
 catch_errors
 
