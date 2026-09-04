@@ -21,7 +21,9 @@ cat <<"EOF"
   \___ \ / _ \ / __| |/ _` | |   | |/ _ \  | |\/| |/ _ \/ _` | | |/ _ \
    ___) | (_) | (__| | (_| | |   | | (_) | | |  | |  __/ (_| | | |  __/
   |____/ \___/ \___|_|\__,_|_|   |_|\___/  |_|  |_|\___|\__,_|_|_|\___|
+
 EOF
+echo -e "${BL}By GerardPolloRebozado${CL}\n"
 }
 header_info
 echo -e "\n"
@@ -34,7 +36,10 @@ build_container
 description
 
 msg_ok "Completed Successfully!\n"
-echo -e "⚠  ${APP} requiere configuración adicional antes de iniciar."
-echo -e "Edita el archivo de entorno en la consola del contenedor usando:"
-echo -e "  nano /opt/social-to-mealie/.env"
-echo -e "Luego reinicia el servicio con: systemctl restart social-to-mealie"
+echo -e "${CREATING}${GN}${APP} setup has been successfully initialized!${CL}"
+echo -e "${INFO}${YW} Access it using the following URL:${CL}"
+echo -e "${TAB}${GATEWAY}${BGN}http://${IP}:4000${CL}\n"
+echo -e "${INFO}${YW} ${APP} requires additional configuration before starting."
+echo -e "${TAB}${YW} Edit the environment file in the container console using:"
+echo -e "${TAB}${YW}   nano /opt/social-to-mealie/.env"
+echo -e "${TAB}${YW} Then restart the service with: systemctl restart social-to-mealie${CL}"
