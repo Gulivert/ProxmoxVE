@@ -39,6 +39,7 @@ msg_ok "Built Application"
 
 msg_info "Creating Systemd Service"
 cp example.env .env
+sed -i 's|LOCAL_TRANSCRIPTION_MODEL=.*|LOCAL_TRANSCRIPTION_MODEL=Xenova/whisper-tiny|g' .env
 
 cat <<EOF >/etc/systemd/system/social-to-mealie.service
 [Unit]
